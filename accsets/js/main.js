@@ -130,30 +130,8 @@ function login() {
     checkIndex = localStorage.getItem('checkIndex') || -1; // Lưu lại vị trí tài khoản đã đăng nhập
     checkLogin = JSON.parse(localStorage.getItem('accs')) || [];
     const useremail = document.getElementById('login-useremail').value.trim();
-    const password = document.getElementById('login-password').value.trim();
-    // Kiểm tra xem các trường nhập liệu có rỗng không
-    if (useremail === "" || password === "") {
-        if (useremail === "") {
-            document.getElementById('login-useremail').classList.add('error');
-            document.getElementById("error-message-email").innerHTML = "Vui lòng nhập email";
-        } else {
-            document.getElementById('login-useremail').classList.remove('error');
-            document.getElementById("error-message-email").innerHTML = "";
-        }
-        if (password === "") {
-            document.getElementById('login-password').classList.add('error');
-            document.getElementById("error-message-password").innerHTML = "Vui lòng nhập mật khẩu";
-        } else {
-            document.getElementById('login-password').classList.remove('error');
-            document.getElementById("error-message-password").innerHTML = "";
-        }
-        return;
-    } else  {
-        document.getElementById('login-useremail').classList.remove('not-error');
-        document.getElementById("error-message-email").innerHTML = "";
-        document.getElementById('login-password').classList.remove('not-error');
-        document.getElementById("error-message-password").innerHTML = "";
-    }   
+    const password = document.getElementById('login-password').value.trim(); 
+    
     // Kiểm tra đăng nhập admin
     if (useremail === accs[0].email && password === accs[0].password) {
         checkIndex = 0; // Lưu lại vị trí tài khoản đã đăng nhập
@@ -162,13 +140,27 @@ function login() {
         setTimeout(() => {
             window.location.href = "/Ung_dung_dat_lich_GYM/homeAdmin.html"; // Chuyển hướng đến trang admin
         }, 1000); // Thời gian chờ 2 giây trước khi chuyển hướng
-    } else {
+    } else if(useremail !== accs[0].email || password !== accs[0].password) { 
         document.getElementById('login-useremail').classList.add('error');
-        document.getElementById("error-message-email").innerHTML = " Email không đúng! Vui lòng thử lại";
-        document.getElementById('login-useremail').value = '';
+        document.getElementById("error-message-email").innerHTML = " Email Hoặc mật khẩu không đúng! Vui lòng thử lại";
+    } else {
+        if (useremail === "") {
+            document.getElementById('login-useremail').classList.add('error');
+            document.getElementById("error-message-email").innerHTML = "Vui lòng nhập email";
+        } else {
+            document.getElementById('login-useremail').classList.remove('not-error');
+            document.getElementById("error-message-email").innerHTML = "";
+        } 
+    
+        if (password === "") {
+            document.getElementById('login-password').classList.add('error');
+            document.getElementById("error-message-password").innerHTML = "Vui lòng nhập mật khẩu";
+        } else {
+            document.getElementById('login-password').classList.remove('not-error');
+            document.getElementById("error-message-password").innerHTML = "";
+        }
     }
     // Kiểm tra đăng nhập tài khoản User
-    const finalCheck = false;
     checkLogin.forEach((acc, index) => {
         if (acc.email === useremail && acc.password === password && index !== 0) {
             checkIndex = index; // Lưu lại vị trí tài khoản đã đăng nhập
@@ -178,26 +170,25 @@ function login() {
                 window.location.href = "/Ung_dung_dat_lich_GYM/homePage.html"; // Chuyển hướng đến trang người dùng
             }, 1000); // Thời gian chờ 2 giây trước khi chuyển hướng
             // Lưu tài khoản số nào đã đăng nhập vào localStorage
-        }
-        if (useremail === "") {
+        } else if(acc.email === useremail && index !== 0 || acc.password === password && index !== 0) {
             document.getElementById('login-useremail').classList.add('error');
-            document.getElementById("error-message-email").innerHTML = "Vui lòng nhập email";
-            finalCheck = true;
+            document.getElementById("error-message-email").innerHTML = " Email không đúng! Vui lòng thử lại";
         } else {
-            document.getElementById('login-useremail').classList.remove('error');
-            document.getElementById("error-message-email").innerHTML = "";
-        } 
-
-        if (password === "") {
-            document.getElementById('login-password').classList.add('error');
-            document.getElementById("error-message-password").innerHTML = "Vui lòng nhập mật khẩu";
-            finalCheck = true;
-        } else {
-            document.getElementById('login-password').classList.remove('error');
-            document.getElementById("error-message-password").innerHTML = "";
-        }
-        if(finalCheck) {
-            return;
+            if (useremail === "") {
+                document.getElementById('login-useremail').classList.add('error');
+                document.getElementById("error-message-email").innerHTML = "Vui lòng nhập email";
+            } else {
+                document.getElementById('login-useremail').classList.remove('not-error');
+                document.getElementById("error-message-email").innerHTML = "";
+            } 
+        
+            if (password === "") {
+                document.getElementById('login-password').classList.add('error');
+                document.getElementById("error-message-password").innerHTML = "Vui lòng nhập mật khẩu";
+            } else {
+                document.getElementById('login-password').classList.remove('not-error');
+                document.getElementById("error-message-password").innerHTML = "";
+            }
         }
     });
 }
@@ -209,41 +200,3 @@ function logout() {
     localStorage.setItem('checkIndex', checkIndex);
 }
 
-// Tạo biến lưu và tạo hộp 
-const displaySv = document.getElementById('class-lish');
-function displayService() {
-    // Lấy dữ liệu dịch vụ từ localStorage
-    const services = JSON.parse(localStorage.getItem('services')) || [];
-    // kiểm tra đăng nhập gắn link theo tài khoản
-    checkIndex = localStorage.getItem('checkIndex') || -1;
-    let linkCheck;
-    if(checkIndex !== -1) {
-        linkCheck = "/Ung_dung_dat_lich_GYM/pages/booking/schedule.html";
-    } else {
-        linkCheck = "/Ung_dung_dat_lich_GYM/pages/auth/login.html";
-    }
-    
-    // Làm mới 
-    displaySv.innerHTML = '';
-    
-    services.forEach((cls, index) => {
-        const div = document.createElement('div');
-        div.innerHTML = `
-            <div class="class">
-                <img src="${cls.imageService}" alt="${cls.nameService}">
-                <div class="class-content">
-                    <h4>${cls.nameService}</h4>
-                    <p>${cls.describeService}</p>
-                    <button>
-                        <a href="${linkCheck}">Đặt lịch</a>
-                    </button>
-                </div>
-            </div>
-        `;
-        displaySv.appendChild(div);
-    });
-}
-
-window.onload = function () {
-    displayService();
-};

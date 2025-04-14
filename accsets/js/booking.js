@@ -219,3 +219,17 @@ function checkInPage() {
         window.location.href = "/Ung_dung_dat_lich_GYM/homeAdmin.html";
     }
 }
+
+// Tạo biến lấy ra dữ liệu và tạo mới dữ liệu
+const displayClass = document.getElementById('class-select');
+function renderClasses() {
+    const services = JSON.parse(localStorage.getItem('services')) || [];
+    displayClass.innerHTML = '<option>Chọn lớp học</option>';
+    services.forEach(cls => {
+        const option = document.createElement('option');
+        option.value = cls.nameService;
+        option.textContent = cls.nameService;
+        displayClass.appendChild(option);
+    });
+}
+renderClasses();
