@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: rgba(249, 250, 251, 1);
+    position: relative;
+}
+
+input {
+    padding-left: 5px;
+}
+
+/* Màn hình đăng nhập */
+/* Màn hình Destop */
+#box-login {
+    position: absolute;
+    top: 130px;
+    left: 496px;
+    width: 448px;
+    height: 384px;
+    border: 1px solid white;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+#box-login h2 {
+    margin: 31.5px 164.19px 0;
+}
+
+#box-login .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 384px;
+    height: 300px;
+    margin: 0 32px 0 32px;
+    gap: 16px;
+}
+
+#box-login .login-form .input-group {
+    display: flex;
+    flex-direction: column;
+    width: 384px;
+    height: 78px;
+}
+
+#box-login .login-form .input-group input {
+    width: 384px;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px solid rgba(209, 213, 219, 1);
+}
+
+#box-login .login-form button {
+    width: 384px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(59, 130, 246, 1);
+    color: #ffff;
+}
+
+#box-login .login-form button:hover {
+    background-color: rgb(19, 106, 247);
+}
+
+#box-login .login-form p {
+    width: 269px;
+    height: 20px;
+    margin: 0 0 0 79.77px;
+}
+
+#box-login .login-form p a {
+    text-decoration: none;
+    color: rgba(59, 130, 246, 1);
+}
+
+/* Màn hình điện thoại */
+@media screen and (max-width: 600px) {
+
+    #box-login,
+    #signup-form {
+        position: absolute;
+        left: 0;
+        top: 141.5px;
+        width: 375px;
+        height: 384px;
+        border: 1px solid white;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+    #signup-form {
+        top: 100px;
+    }
+
+    #signup-form {
+        height: 572px;
+    }
+
+    #signup-form h2 {
+        margin: 31.5px 135.19px 0;
+    }
+
+    #box-login h2 {
+        margin: 31.5px 128.19px 0;
+    }
+
+    #box-login .login-form,
+    #signup-form .login-form {
+        display: flex;
+        flex-direction: column;
+        width: 311px;
+        height: 228px;
+        margin: 0 32px 0 32px;
+        gap: 16px;
+    }
+
+    #signup-form .login-form {
+        height: 416px;
+    }
+
+    #box-login .login-form .input-group,
+    #signup-form .login-form .input-group {
+        display: flex;
+        flex-direction: column;
+        width: 311px;
+        height: 78px;
+    }
+
+    #box-login .login-form .input-group input,
+    #signup-form .login-form .input-group input {
+        width: 311px;
+        height: 42px;
+        border-radius: 5px;
+        border: 1px solid rgba(209, 213, 219, 1);
+    }
+
+    #box-login .login-form button,
+    #signup-form .login-form button {
+        width: 311px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(59, 130, 246, 1);
+        color: #ffff;
+    }
+
+    #box-login .login-form p {
+        width: 269px;
+        height: 20px;
+        margin: 0 0 0 40.77px;
+    }
+
+    #signup-form .login-form p {
+        margin: 0 0 0 60.77px;
+    }
+
+    #box-login .login-form p a,
+    #signup-form .login-form p a {
+        text-decoration: none;
+        color: rgba(59, 130, 246, 1);
+    }
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 600px) {
+
+    #box-login {
+        position: absolute;
+        left: 110px;
+        top: 141.5px;
+        width: 375px;
+        height: 384px;
+        border: 1px solid white;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+
+    #box-login h2 {
+        margin: 31.5px 128.19px 0;
+    }
+
+    #box-login .login-form {
+        display: flex;
+        flex-direction: column;
+        width: 311px;
+        height: 228px;
+        margin: 0 32px 0 32px;
+        gap: 16px;
+    }
+
+    #box-login .login-form .input-group {
+        display: flex;
+        flex-direction: column;
+        width: 311px;
+        height: 78px;
+    }
+
+    #box-login .login-form .input-group input {
+        width: 311px;
+        height: 42px;
+        border-radius: 5px;
+        border: 1px solid rgba(209, 213, 219, 1);
+    }
+
+    #box-login .login-form button {
+        width: 311px;
+        height: 40px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgba(59, 130, 246, 1);
+        color: #ffff;
+    }
+
+    #box-login .login-form p {
+        width: 269px;
+        height: 20px;
+        margin: 0 0 0 40.77px;
+    }
+
+    #box-login .login-form p a {
+        text-decoration: none;
+        color: rgba(59, 130, 246, 1);
+    }
+
+}
+
+/* Màn hình tablet */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    #box-login {
+        position: absolute;
+        left: 193px;
+        top: 141.5px;
+        width: 448px;
+        height: 384px;
+        border: 1px solid white;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+
+}
+
+.error {
+    border-color: red!important;
+}

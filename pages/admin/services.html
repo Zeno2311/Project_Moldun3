@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../accsets/css/services.css">
+</head>
+
+<body>
+    <div class="box-admin">
+        <div class="nav-admin">
+            <h2>
+                <a href="#">Admin Dashboard</a>
+            </h2>
+            <div class="nav-admin-content">
+                <button class="nav-admin-content-title">
+                    <a href="/Ung_dung_dat_lich_GYM/pages/admin/dashboard.html">Quản lý lịch</a>
+                </button>
+                <button class="nav-admin-content-title">
+                    <a href="#">Quản lý dịch vụ</a>
+                </button>
+                <button class="nav-admin-content-title">
+                    <a href="/Ung_dung_dat_lich_GYM/homeAdmin.html">Trang chủ</a>
+                </button>
+                <button class="nav-admin-content-title" id="logout">
+                    <a href="/Ung_dung_dat_lich_GYM/pages/auth/login.html" onclick="logout()">Đăng xuất</a>
+                </button>
+            </div>
+        </div>
+        <div class="content-admin-service">
+            <div class="lish-admin-2">
+                <h3>Quản lý dịch vụ</h3>
+                <button id="add-service-btn" class="add-service-btn" onclick="showAdd()">
+                    Thêm dịch vụ
+                </button>
+            </div>
+
+            <div class="table-admin">
+                <table id="service-table">
+                    <thead>
+                        <tr>
+                            <th>Tên dịch vụ</th>
+                            <th>Mô tả</th>
+                            <th>Hình ảnh</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="service-list">
+                        <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--Form thêm dịch vụ mới-->
+    <div class="add-service" id="add-service">
+        <div class="box">
+            <h3>Thêm dịch vụ mới</h3>
+            <p>Tên dịch vụ</p>
+            <input type="text" id="name-service">
+            <span id="error-message-name" style="color: red;"></span>
+            <p>Mô tả</p>
+            <textarea name="cmt" id="cmt"></textarea>
+            <span id="error-message-textarea" style="color: red;"></span>
+            <p>URL Hình ảnh</p>
+            <input type="text" id="url">
+            <span id="error-message-url" style="color: red;"></span>
+            <div class="confirm-class">
+                <button onclick="exitAdd()">Hủy</button>
+                <button onclick="saveAdd()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/Ung_dung_dat_lich_GYM/accsets/js/services.js"></script>
+</body>
+
+</html>

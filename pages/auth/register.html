@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign</title>
+    <link rel="stylesheet" href="../../accsets/css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!--Form đăng ký-->
+    <div id="signup-form" class="form-box">
+        <h2>Đăng ký</h2>
+        <div class="login-form">
+            <div class="input-group">
+                <label>Họ tên</label>
+                <input type="text" id="signup-username">
+                <span id="error-message-username" style="color: red;"></span>
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="signup-email">
+                <span id="error-message-email" style="color: red;"></span>
+            </div>
+            <div class="input-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="signup-password">
+                <span id="error-message-password" style="color: red;"></span>
+            </div>
+            <div class="input-group">
+                <label>Xác nhận mật khẩu</label>
+                <input type="password" id="signup-confirm-password">
+                <span id="error-message-confirm-password" style="color: red;"></span>
+            </div>
+            <button onclick="signup()">Đăng ký</button>
+            <p>Đã có tài khoản? <a href="#" onclick="showLogin()">Đăng nhập</a></p>
+        </div>
+    </div>
+    <script src="/Ung_dung_dat_lich_GYM/accsets/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

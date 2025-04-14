@@ -1,0 +1,362 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+/* Màn hình admin */
+
+.box-admin {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-admin {
+    display: flex;
+    flex-direction: column;
+    background-color: #1F2937;
+    width: 250px;
+    height: 1416px;
+    gap: 50px;
+}
+
+.nav-admin h2 {
+    margin: 20px 0 0 20px;
+    font-size: 30px;
+}
+
+.nav-admin h2 a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.nav-admin .nav-admin-content {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 0 0 10px;
+    height: 184px;
+}
+
+.nav-admin .nav-admin-content .nav-admin-content-title {
+    width: 218px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    text-align: left;
+    padding: 0 0 0 20px;
+    background-color: #1F2937;
+}
+
+.nav-admin .nav-admin-content .nav-admin-content-title:hover {
+    background-color: rgba(163, 175, 195, 0.264);
+}
+
+.nav-admin .nav-admin-content .nav-admin-content-title a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.nav-admin .nav-admin-content #logout a {
+    color: tomato;
+    text-decoration: none;
+}
+
+.content-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.content-admin h3 {
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.content-admin .lish-admin {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 120px;
+}
+
+.content-admin .lish-admin .lish-1 {
+    width: 530px;
+    height: 120px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content-admin .lish-admin .lish-1 p {
+    margin-top: 25px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.content-admin .lish-admin .lish-1 #gym-value {
+    color: rgba(37, 99, 235, 1);
+    font-size: 30px;
+}
+
+.content-admin .lish-admin .lish-1 #yoga-value {
+    color: rgba(34, 197, 94, 1);
+    font-size: 30px;
+}
+
+.content-admin .lish-admin .lish-1 #zumba-value {
+    color: rgba(249, 115, 22, 1);
+    font-size: 30px;
+    color: rgba(124, 58, 237, 1);
+    font-size: 30px;
+}
+
+.content-admin .table-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.content-admin .table-admin .table-lish-admin {
+    width: 100%;
+}
+
+.content-admin .table-admin .table-lish-admin h5 {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.content-admin .table-admin .table-lish-admin h5 #color-ex-admin {
+    width: 45px;
+    height: 20px;
+    background-color: rgba(90, 142, 255, 0.697);
+    border: none;
+}
+
+canvas {
+    border: 1px solid #ddd;
+}
+
+.filter-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 180px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.box-min-admin {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.box-min-admin .filter-data-admin {
+    width: 466px;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid rgba(209, 213, 219, 1);
+}
+
+.box-min-admin input {
+    width: 466px;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid rgba(209, 213, 219, 1);
+}
+
+.table-admin-1 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 5px;
+    /* background-color: rgba(229, 231, 235, 1); */
+}
+
+.table-data-admin thead {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(229, 231, 235, 1);
+}
+
+.table-data-admin thead th {
+    text-align: left;
+    width: 256px;
+    height: 50px;
+    padding: 0 0 0 20px;
+}
+
+.table-data-admin thead th:nth-child(1) {
+    border-top-left-radius: 5px;
+}
+
+.table-data-admin thead th:nth-child(6) {
+    border-top-right-radius: 5px;
+}
+.table-data-admin tbody td {
+    height: 20px;
+    padding: 0 0 0 20px;
+}
+
+/* Màn mobile admin */
+@media screen and (max-width: 600px) {
+    .lish-admin {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+
+    }
+
+    .content-admin .lish-admin {
+        display: flex;
+        width: 100%;
+        height: 378px;
+    }
+
+    .filter-admin {
+        height: 300px;
+    }
+
+    .box-min-admin {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .box-min-admin .filter-data-admin {
+        width: 100%;
+        height: 38px;
+        border-radius: 5px;
+        border: 1px solid rgba(209, 213, 219, 1);
+    }
+    
+    .box-min-admin input {
+        width: 100%;
+        height: 38px;
+        border-radius: 5px;
+        border: 1px solid rgba(209, 213, 219, 1);
+    }
+}
+
+#box-up {
+    display: none;
+}
+
+.add-class {
+    position: absolute;
+    top: 150%;
+    left: 55%;
+    background-color: white;
+    box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    width: 450px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add-class select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(156, 163, 175, 1);
+    margin-bottom: 20px;
+}
+
+.add-class input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(156, 163, 175, 1);
+    margin-bottom: 20px;
+}
+
+.confirm-class {
+    text-align: right;
+}
+
+.confirm-class button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+.confirm-class button:nth-child(1) {
+    background-color: rgb(109, 114, 127);
+}
+.confirm-class button:nth-child(1):hover {
+    background-color: rgb(97, 102, 113);
+}
+
+.confirm-class button:nth-child(2) {
+    background-color: rgb(91, 132, 238);
+}
+
+.confirm-class button:nth-child(2):hover {
+    background-color: rgb(64, 114, 241);
+}
+
+.error {
+    border-color: red!important;
+}
+
+.not-error {
+    border-color: rgba(156, 163, 175, 1)!important;
+}
+
+#click-1 {
+    border: none;
+    padding: 5px;
+    background-color: white;
+    color: rgb(64, 114, 241);
+}
+
+#click-2 {
+    border: none;
+    padding: 5px;
+    background-color: white;
+    color: tomato;
+}
+
+.nav-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-box button {
+    padding: 5px 15px;
+    background-color: rgba(59, 130, 246, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.nav-box button:hover {
+    background-color: rgb(13, 104, 250);
+}

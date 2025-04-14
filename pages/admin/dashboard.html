@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../accsets/css/dashboard.css">
+</head>
+
+<body>
+    <div class="box-admin">
+        <div class="nav-admin">
+            <h2>
+                <a href="#">Admin Dashboard</a>
+            </h2>
+            <div class="nav-admin-content">
+                <button class="nav-admin-content-title">
+                    <a href="#">Quản lý lịch</a>
+                </button>
+                <button class="nav-admin-content-title">
+                    <a href="/Ung_dung_dat_lich_GYM/pages/admin/services.html">Quản lý dịch vụ</a>
+                </button>
+                <button class="nav-admin-content-title">
+                    <a href="/Ung_dung_dat_lich_GYM/homeAdmin.html">Trang chủ</a>
+                </button>
+                <button class="nav-admin-content-title" id="logout" onclick="logout()">
+                    <a href="/Ung_dung_dat_lich_GYM/pages/auth/login.html">Đăng xuất</a>
+                </button>
+            </div>
+        </div>
+
+        <div class="content-admin">
+            <h3>Thống kê lịch tập</h3>
+            <div class="lish-admin">
+                <div class="lish-1">
+                    <p>
+                        Tổng số lịch Gym
+                    </p>
+                    <p id="gym-value">0</p>
+                </div>
+                <div class="lish-1">
+                    <p>
+                        Tổng số lịch Yoga
+                    </p>
+                    <p id="yoga-value">0</p>
+                </div>
+                <div class="lish-1">
+                    <p>
+                        Tổng số lịch Zumba
+                    </p>
+                    <p id="zumba-value">0</p>
+                </div>
+            </div>
+
+            <div class="table-admin">
+                <div class="table-lish-admin">
+                    <h5><button id="color-ex-admin"></button> Số lượng đặt lịch</h5>
+                </div>
+                <canvas id="myChart" width="400" height="230"></canvas>
+            </div>
+
+            <div class="filter-admin">
+                <div class="nav-box">
+                    <h4>Bộ lọc</h4>
+                    <button onclick="displayAddFilter()">Lọc</button>
+                </div>
+                <div class="box-min-admin">
+                    <div>
+                        <p>Lớp học</p>
+                        <select id="filter-data-admin-check" class="filter-data-admin">
+                            <option>Tất cả</option>
+                            <option value="Gym">Gym</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Zumba">Zumba</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <p>Email</p>
+                        <input type="text" id="search-email-check" placeholder="Nhập email" style="padding: 0 0 0 10px;">
+                    </div>
+
+                    <div>
+                        <p>Ngày</p>
+                        <input type="date" id="search-time-check">
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-admin-1">
+                <table id="table-data-admin" class="table-data-admin">
+                    <thead>
+                        <tr>
+                            <th>Lớp học</th>
+                            <th>Ngày tập</th>
+                            <th>Khung giờ</th>
+                            <th>Họ tên</th>
+                            <th>Email</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-list">
+                        <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="box-up">
+                <div class="add-class">
+                    <h2>Sửa dữ liệu</h2>
+                    <p>Họ tên</p>
+                    <input type="text" id="name-input" placeholder="Nhập họ tên">
+                    <span id="error-message-name" style="color: red;"></span>
+                    <p>Email</p>
+                    <input type="email" id="email-input" placeholder="Nhập email">
+                    <span id="error-message-email" style="color: red;"></span>
+
+                    <p>Lớp học</p>
+                    <select id="class-select">
+                        <option>Chọn lớp học</option>
+                        <option value="Gym">Gym</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Zumba">Zumba</option>
+                    </select>
+                    <span id="error-message-class" style="color: red;"></span>
+                    <p>Ngày</p>
+                    <input type="date" id="date-input">
+                    <span id="error-message-date" style="color: red;"></span>
+                    <p>Khung giờ</p>
+                    <select id="class-time">
+                        <option>Chọn khung giờ</option>
+                        <option value="07:00 - 09:00">07:00 - 09:00</option>
+                        <option value="09:00 - 11:00">09:00 - 11:00</option>
+                        <option value="14:00 - 16:00">14:00 - 16:00</option>
+                        <option value="16:00 - 18:00">16:00 - 18:00</option>
+                        <option value="18:00 - 20:00">18:00 - 20:00</option>
+                        <option value="20:00 - 22:00">20:00 - 22:00</option>
+                    </select>
+                    <span id="error-message-time" style="color: red;"></span>
+                    <div class="confirm-class">
+                        <button onclick="exitAdd()">Hủy</button>
+                        <button onclick="saveAdd()">Lưu</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/Ung_dung_dat_lich_GYM/accsets/js/admin.js"></script>
+</body>
+
+</html>

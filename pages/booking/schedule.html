@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../accsets/css/schedule.css">
+</head>
+
+<body>
+    <nav>
+        <h1>
+            <a href="#">GYM MANAGEMENT</a>
+        </h1>
+        <ul>
+            <li>
+                <button onclick="checkInPage()" style="color: white; background-color: rgba(240, 248, 255, 0); border: none; font-size: 15px;">
+                    Trang chủ
+                </button>
+            </li>
+            <li>
+                <a href="#">Lịch tập</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>Quản lý lịch tập</h2>
+        <button onclick="showAdd()">
+            Đặt lịch mới
+        </button>
+    </div>
+
+    <div class="table-lish">
+        <table>
+            <thead>
+                <tr class="table-header">
+                    <th>Lớp học</th>
+                    <th>Ngày</th>
+                    <th>Khung giờ</th>
+                    <th>Họ tên</th>
+                    <th>Email</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="schedule-list">
+                <!-- Dữ liệu sẽ được thêm vào đây bằng JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="box-up">
+        <div class="add-class">
+            <h2>Đặt lịch mới</h2>
+            <p>Lớp học</p>
+            <select id="class-select">
+                <option>Chọn lớp học</option>
+                <option value="Gym">Gym</option>
+                <option value="Yoga">Yoga</option>
+                <option value="Zumba">Zumba</option>
+            </select>
+            <span id="error-message-class" style="color: red;"></span>
+            <p>Ngày</p>
+            <input type="date" id="date-input">
+            <span id="error-message-date" style="color: red;"></span>
+            <p>Khung giờ</p>
+            <select id="class-time">
+                <option>Chọn khung giờ</option>
+                <option value="07:00 - 09:00">07:00 - 09:00</option>
+                <option value="09:00 - 11:00">09:00 - 11:00</option>
+                <option value="14:00 - 16:00">14:00 - 16:00</option>
+                <option value="16:00 - 18:00">16:00 - 18:00</option>
+                <option value="18:00 - 20:00">18:00 - 20:00</option>
+                <option value="20:00 - 22:00">20:00 - 22:00</option>
+            </select>
+            <span id="error-message-time" style="color: red;"></span>
+            <div class="confirm-class">
+                <button onclick="exitAdd()">Hủy</button>
+                <button onclick="saveAdd()">Lưu</button>
+            </div>
+        </div>
+    </div>
+
+        <script src="../../accsets/js/booking.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>

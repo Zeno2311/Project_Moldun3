@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body {
+    background-color: rgba(249, 250, 251, 1);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1F2937;
+    padding: 15px 90px;
+    color: white;
+}
+
+h1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 0;
+    padding: 15px 100px;
+}
+
+.content button {
+    background-color: rgba(59, 130, 246, 1);
+    color: white;
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.table-lish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px 0 0 0;
+    width: 100%;
+}
+
+.table-lish table {
+    text-align: left;
+    width: 1300px;
+    height: 49px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: none;
+    background-color: rgba(229, 231, 235, 1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-lish table tr {
+    width: 1300px;
+    height: 30px;
+    border-bottom: 1px solid rgba(156, 163, 175, 1);
+}
+
+.table-lish table thead {
+    background-color: rgba(229, 231, 235, 1);
+}
+
+.table-lish table tbody {
+    background-color: white;
+}
+
+.table-lish table th {
+    padding: 15px 0 5px 10px;
+}
+
+.table-lish table td {
+    padding: 0 0 0 10px;
+}
+
+
+#box-up {
+    display: none;
+}
+
+.add-class {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    background-color: white;
+    box-shadow: 0 0 1000px 1000px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+    width: 450px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add-class select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(156, 163, 175, 1);
+    margin-bottom: 20px;
+}
+
+.add-class input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(156, 163, 175, 1);
+    margin-bottom: 20px;
+}
+
+.confirm-class {
+    text-align: right;
+}
+
+.confirm-class button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+
+.confirm-class button:nth-child(1) {
+    background-color: rgb(109, 114, 127);
+}
+.confirm-class button:nth-child(1):hover {
+    background-color: rgb(97, 102, 113);
+}
+
+.confirm-class button:nth-child(2) {
+    background-color: rgb(91, 132, 238);
+}
+
+.confirm-class button:nth-child(2):hover {
+    background-color: rgb(64, 114, 241);
+}
+
+.error {
+    border-color: red!important;
+}
+
+.not-error {
+    border-color: rgba(156, 163, 175, 1)!important;
+}
+
+#click-1 {
+    border: none;
+    padding: 5px;
+    background-color: white;
+    color: rgb(64, 114, 241);
+}
+
+#click-2 {
+    border: none;
+    padding: 5px;
+    background-color: white;
+    color: tomato;
+}

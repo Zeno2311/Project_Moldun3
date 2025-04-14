@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../accsets/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!--Form đăng nhập-->
+    <div id="box-login" class="form-box">
+        <h2>Đăng nhập</h2>
+        <div class="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                    <input type="email" id="login-useremail">
+                    <span id="error-message-email" style="color: red;"></span>
+            </div>
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="login-password">
+                <span id="error-message-password" style="color: red;"></span>
+            </div>
+            <button onclick="login()">Đăng nhập</button>
+            <p>Chưa có tài khoản? <a href="#" onclick="showSign()">Đăng ký ngay</a></p>
+        </div>
+    </div>
+    <script src="../../accsets/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
