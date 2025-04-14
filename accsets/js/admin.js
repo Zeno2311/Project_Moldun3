@@ -201,7 +201,7 @@ function saveAdd() {
     }
 
     // Kiểm tra xem có bị trùng lớp học và khung giờ không
-    const isDuplicate = everyClass.some(cls => cls.time === classTime && cls.date === classDate && cls.userr === nameInput);
+    const isDuplicate = everyClass.some(cls => cls.name === className && cls.time === classTime && cls.date === classDate && cls.userr === nameInput);
     if (isDuplicate) {
         swal("Lớp học đã được đặt trước vào thời gian này. Vui lòng chọn thời gian khác.", {
             icon: "warning",
@@ -375,3 +375,29 @@ function displayAddFilter() {
 }
 
 
+// Tạo biến lấy ra dữ liệu và tạo mới dữ liệu
+const displayClass = document.getElementById('class-select');
+function renderClasses() {
+    const services = JSON.parse(localStorage.getItem('services')) || [];
+    displayClass.innerHTML = '<option>Chọn lớp học</option>';
+    services.forEach(cls => {
+        const option = document.createElement('option');
+        option.value = cls.nameService;
+        option.textContent = cls.nameService;
+        displayClass.appendChild(option);
+    });
+}
+renderClasses();
+
+const displayClassR = document.getElementById('filter-data-admin-check');
+function renderClassesR() {
+    const services = JSON.parse(localStorage.getItem('services')) || [];
+    displayClass.innerHTML = '<option>Tất cả</option>';
+    services.forEach(cls => {
+        const option = document.createElement('option');
+        option.value = cls.nameService;
+        option.textContent = cls.nameService;
+        displayClassR.appendChild(option);
+    });
+}
+renderClassesR();
