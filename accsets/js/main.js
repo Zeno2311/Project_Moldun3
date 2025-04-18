@@ -88,7 +88,7 @@ function signup() {
     }
     // Kiểm tra độ dài mật khẩu
     const regex = /^(?=.*[A-Z]).*\d$/;
-    if (!regex.test(password)) {
+    if (!regex.test(password) || password.length < 8) {
         document.getElementById('signup-password').classList.add('error');
         document.getElementById("error-message-password").innerHTML = "Mật khẩu phải có ít nhất một chữ viết hoa và kết thúc bằng số";
         return;

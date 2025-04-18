@@ -131,6 +131,10 @@ function saveAdd() {
         swal("Đặt lịch thành công!", {
             icon: "success",
         });
+        // swal("Vui lòng thanh toán 30% để đặt lịch!!!", {
+        //     icon: "/Ung_dung_dat_lich_GYM/data/Screenshot 2025-04-14 231207.png", 
+        //     buttons: ["Exit!", true],
+        //   });
     }
     exitAdd();
 }
@@ -145,6 +149,7 @@ function displayAdd() {
     // Lấy thông tin người dùng hiện tại
     const currentUser = users[checkId];
     // Hiển thị danh sách lớp học
+    let count = 0;
     classList.innerHTML = '';
     everyClass.sort((a, b) => {
         // Chuyển ngày thành đối tượng Date và so sánh chúng
@@ -165,7 +170,10 @@ function displayAdd() {
                 </td>
             `;
             classList.appendChild(tr);
+            count++;
+            console.log(count);
         }
+        
     });
 }
 
